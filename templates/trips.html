@@ -35,8 +35,8 @@
             </div>
     </div>
 </div>
-<input id="inputsearchdepart" class="form-control" type="text" onkeyup="filtersearch()" placeholder="Search" aria-label="Search">
-<input id="inputsearcharrive" class="form-control" type="text" onkeyup="filtersearch()" placeholder="Search" aria-label="Search">
+<input id="inputsearchdepart" class="form-control" type="text" onkeyup="filtersearchdepart()" placeholder="Search Depart" aria-label="Search Depart">
+<input id="inputsearcharrival" class="form-control" type="text" onkeyup="filtersearcharrival()" placeholder="Search Arrival" aria-label="Search Arrival">
     <div class="row">
            <table id="tabletrips" class="table">
   <thead>
@@ -101,10 +101,10 @@ function filtersearchdepart() {
     } 
   }
 }
-function filtersearcharrive() {
+function filtersearcharrival() {
   // Declare variables 
   var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("inputsearcharrive");
+  input = document.getElementById("inputsearcharrival");
   filter = input.value.toUpperCase();
   table = document.getElementById("tabletrips");
   tr = table.getElementsByTagName("tr");
