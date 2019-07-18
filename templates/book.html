@@ -35,8 +35,8 @@
             </div>
     </div>
 </div>
-<input id="inputsearchdepart" class="form-control" type="text" onkeyup="filtersearchdepart()" placeholder="Search Depart" aria-label="Search Depart">
-<input id="inputsearcharrival" class="form-control" type="text" onkeyup="filtersearcharrival()" placeholder="Search Arrival" aria-label="Search Arrival">
+<input id="inputsearchdepart" class="form-control" type="text" onkeyup="filtersearch()" placeholder="Search Depart" aria-label="Search Depart">
+<input id="inputsearcharrival" class="form-control" type="text" onkeyup="filtersearch()" placeholder="Search Arrival" aria-label="Search Arrival">
     <div class="row">
            <table id="tabletrips" class="table">
   <thead>
@@ -80,41 +80,24 @@
 <!-- Square Buttons Effects - END -->
 
 <script>
-function filtersearchdepart() {
+function filtersearch() {
   // Declare variables 
-  var input, filter, table, tr, td, i, txtValue;
+  var input, filter, table, tr, td, i, txtValue, input2, filter2, td2, txtValue2;
   input = document.getElementById("inputsearchdepart");
+  input2 = document.getElementById("inputsearcharrival");
   filter = input.value.toUpperCase();
+  filter2 = input2.value.toUpperCase();
   table = document.getElementById("tabletrips");
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
+    td2 = tr[i].getElementsByTagName("td")[1];
+    if (td || td2) {
       txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-function filtersearcharrival() {
-  // Declare variables 
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("inputsearcharrival");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("tabletrips");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      txtValue2 = td2.textContent || td2.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1 && txtValue2.toUpperCase().indexOf(filter2) > -1) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
