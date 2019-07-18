@@ -35,13 +35,11 @@
             </div>
     </div>
 </div>
-<input id="inputsearchdepart" class="form-control" type="text" onkeyup="filtersearchdepart()" placeholder="Search Depart" aria-label="Search Depart">
-<input id="inputsearcharrival" class="form-control" type="text" onkeyup="filtersearcharrival()" placeholder="Search Arrival" aria-label="Search Arrival">
     <div class="row">
            <table id="tabletrips" class="table">
   <thead>
     <tr>
-      <th scope="col">Trips</th>
+      <th scope="col">History</th>
       <th scope="col">Depart</th>
       <th scope="col">Arrival</th>
       <th scope="col">Estimated Arrival</th>
@@ -79,50 +77,6 @@
 
 <!-- Square Buttons Effects - END -->
 
-<script>
-function filtersearchdepart() {
-  // Declare variables 
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("inputsearchdepart");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("tabletrips");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-function filtersearcharrival() {
-  // Declare variables 
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("inputsearcharrival");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("tabletrips");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-</script>
 
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
