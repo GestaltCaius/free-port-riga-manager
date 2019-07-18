@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+			 <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <a href="#" class="btn btn-block btn-secondary">
+                    <i class="fa fa-arrow-left fa-1px"></i>
+                    <br />
+                    Back
+                    <br />
+                </a>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <a href="#" class="btn btn-block btn-secondary">
+                    <i class="fa fa-home fa-1px"></i>
+                    <br />
+                    Menu
+                    <br />
+                </a>
+            </div>
+    </div>
+</div>
+<input id="inputsearchdepart" class="form-control" type="text" onkeyup="filtersearchdepart()" placeholder="Search Depart" aria-label="Search Depart">
+<input id="inputsearcharrival" class="form-control" type="text" onkeyup="filtersearcharrival()" placeholder="Search Arrival" aria-label="Search Arrival">
+    <div class="row">
+           <table id="tabletrips" class="table">
+  <thead>
+    <tr>
+      <th scope="col">Trips</th>
+      <th scope="col">Depart</th>
+      <th scope="col">Arrival</th>
+      <th scope="col">Estimated Arrival</th>
+      <th scope="col">etc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>France</td>
+      <td>Lettonie</td>
+      <td>12h56</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Lettonie</td>
+      <td>France</td>
+      <td>23h41</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Lettonie</td>
+      <td>Russie</td>
+      <td>07h65</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<style>
+	.btn {
+      margin: 10px;
+	}
+</style>
+
+<!-- Square Buttons Effects - END -->
+
+<script>
+function filtersearchdepart() {
+  // Declare variables 
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("inputsearchdepart");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tabletrips");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+function filtersearcharrival() {
+  // Declare variables 
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("inputsearcharrival");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tabletrips");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
