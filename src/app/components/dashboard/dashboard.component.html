@@ -1,15 +1,16 @@
-  <!-- <div class="page-header">
-    <div class="row m-2">
-      <div class="col-6 col-md-4">
-        <a href="#" class="btn btn-block btn-secondary">
+<div class="container">
+  <div class="page-header">
+    <div class="row mb-5 mt-4">
+      <div class="col-6 col-lg-4">
+        <a routerLink="/" class="btn btn-block btn-secondary">
           <i class="fa fa-power-off fa-1px"></i>
           <br />
           Log out
           <br />
         </a>
       </div>
-      <div class="col-6 offset-md-4 col-md-4">
-        <a href="#" class="btn btn-block btn-secondary">
+      <div class="col-6 offset-lg-4 col-lg-4">
+        <a routerLink="/home" class="btn btn-block btn-secondary">
           <i class="fa fa-user fa-1px"></i>
           <br />
           User
@@ -19,39 +20,55 @@
     </div>
   </div>
 
-  <div class="row m-2">
-    <div class="col-12">
-      <a href="#" class="btn btn-block btn-primary">
-        <i class="fa fa-compass fa-4x"></i>
-        <br />
-        Current Trip
-        <br />
+
+  <div class="row">
+    <div class="col-12 my-3 mt-5">
+      <a routerLink="/tab/current-trip" id="btn_current_trip" class="btn btn-block btn-primary p-4">
+        <div class="row">
+          <span class="badge col-2">
+            <i class="fa fa-compass fa-4x"></i>
+          </span>
+          <span class="col-8 justify-content-center my-auto button-text">
+            My current trips
+          </span>
+        </div>
       </a>
     </div>
   </div>
-  <div class="row m-2">
-    <div class="col-12">
-      <a href="#" class="btn btn-block btn-success">
-        <i class="fa fa-ship fa-4x"></i>
-        <br />
-        Trips
-        <br />
+
+  <div class="row">
+    <div class="col-12 my-3">
+      <a routerLink="/tab/search-trip" id="btn_trips" class="btn btn-block btn-success p-4">
+        <div class="row">
+          <span class="badge col-2">
+            <i class="fa fa-ship fa-4x"></i>
+          </span>
+          <span class="col-8 justify-content-center my-auto button-text">
+            Book a trip on StenaLine
+          </span>
+        </div>
       </a>
     </div>
   </div>
-  <div class="row m-2">
-    <div class="col-12">
-      <a href="#" class="btn btn-block btn-danger">
-        <i class="fa fa-history fa-4x"></i>
-        <br />
-        History
-        <br />
+
+  <div class="row">
+    <div class="col-12 my-3">
+      <a routerLink="/tab/trip-history" id="btn_history" class="btn btn-block btn-danger p-4">
+        <div class="row">
+          <span class="badge col-2">
+            <i class="fa fa-history fa-4x"></i>
+          </span>
+          <span class="col-8 justify-content-center my-auto button-text">
+            History
+          </span>
+        </div>
       </a>
     </div>
   </div>
-  <div class="row m-2">
+
+  <!-- <div class="row my-4">
     <div class="col-12">
-      <a href="#" class="btn btn-block btn-info">
+      <a routerLink="/tab/book-trip" id="btn_book" class="btn btn-block btn-info">
         <i class="fa fa-shopping-cart fa-4x"></i>
         <br />
         Book
@@ -60,71 +77,4 @@
     </div>
   </div> -->
 
-  <div class="container">
-    <div class="page-header">
-      <div class="row my-2">
-        <div class="col-6 col-lg-4">
-          <a routerLink="/" class="btn btn-block btn-secondary">
-            <i class="fa fa-power-off fa-1px"></i>
-            <br />
-            Log out
-            <br />
-          </a>
-        </div>
-        <div class="col-6 offset-lg-4 col-lg-4">
-          <a routerLink="/home" class="btn btn-block btn-secondary">
-            <i class="fa fa-user fa-1px"></i>
-            <br />
-            User
-            <br />
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="row">
-      <div class="col-12 my-4">
-        <a routerLink="/tab/current-trip" id="btn_current_trip" class="btn btn-block btn-primary">
-          <i class="fa fa-compass fa-4x"></i>
-          <br />
-          Current Trip
-          <br />
-        </a>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-12 my-4">
-        <a routerLink="/tab/search-trip" id="btn_trips" class="btn btn-block btn-success">
-          <i class="fa fa-ship fa-4x"></i>
-          <br />
-          Trips
-          <br />
-        </a>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-12 my-4">
-        <a routerLink="/tab/trip-history" id="btn_history" class="btn btn-block btn-danger">
-          <i class="fa fa-history fa-4x"></i>
-          <br />
-          History
-          <br />
-        </a>
-      </div>
-    </div>
-
-    <div class="row my-4">
-      <div class="col-12">
-        <a routerLink="/tab/book-trip" id="btn_book" class="btn btn-block btn-info">
-          <i class="fa fa-shopping-cart fa-4x"></i>
-          <br />
-          Book
-          <br />
-        </a>
-      </div>
-    </div>
-
-  </div>
+</div>
