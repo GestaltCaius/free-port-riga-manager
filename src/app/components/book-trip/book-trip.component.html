@@ -1,0 +1,75 @@
+<input id="inputsearchdepart" class="form-control" type="text" onkeyup="filtersearch()" placeholder="Search Depart"
+  aria-label="Search Depart">
+<input id="inputsearcharrival" class="form-control" type="text" onkeyup="filtersearch()" placeholder="Search Arrival"
+  aria-label="Search Arrival">
+<div class="row">
+  <table id="tabletrips" class="table">
+    <thead>
+      <tr>
+        <th scope="col">Trips</th>
+        <th scope="col">Depart</th>
+        <th scope="col">Arrival</th>
+        <th scope="col">Estimated Arrival</th>
+        <th scope="col">etc</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>France</td>
+        <td>Lettonie</td>
+        <td>12h56</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Lettonie</td>
+        <td>France</td>
+        <td>23h41</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Lettonie</td>
+        <td>Russie</td>
+        <td>07h65</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .btn {
+    margin: 10px;
+  }
+
+</style>
+
+<!-- Square Buttons Effects - END -->
+
+<script>
+  function filtersearch() {
+    // Declare variables 
+    var input, filter, table, tr, td, i, txtValue, input2, filter2, td2, txtValue2;
+    input = document.getElementById("inputsearchdepart");
+    input2 = document.getElementById("inputsearcharrival");
+    filter = input.value.toUpperCase();
+    filter2 = input2.value.toUpperCase();
+    table = document.getElementById("tabletrips");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      td2 = tr[i].getElementsByTagName("td")[1];
+      if (td || td2) {
+        txtValue = td.textContent || td.innerText;
+        txtValue2 = td2.textContent || td2.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1 && txtValue2.toUpperCase().indexOf(filter2) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+</script>

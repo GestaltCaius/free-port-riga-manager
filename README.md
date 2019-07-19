@@ -1,3 +1,14 @@
+# Questions
+
+* Quelles informations dans la liste des trips ? Source, destination, heure de depart, ID du voyage ? C'est tout ?
+* Comment on fait la recherche ? On charge tout et apres il cherche ou bien il tape le jour de depart, le lieu et on renvoie les infos ?
+
+1. Search for his trip
+2. had a button to be notified (bookmark/notify by email)
+
+
+scheduled and real time + details link  
+
 # FreeportRiga
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
