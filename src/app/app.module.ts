@@ -13,6 +13,7 @@ import { TripHistoryComponent } from './components/trip-history/trip-history.com
 import { BookTripComponent } from './components/book-trip/book-trip.component';
 import { CmrFormComponent } from './components/cmr-form/cmr-form.component';
 import { TabComponent } from './components/tab/tab.component';
+import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TabComponent } from './components/tab/tab.component';
     TripHistoryComponent,
     BookTripComponent,
     CmrFormComponent,
-    TabComponent
+    TabComponent,
+    TripDetailsComponent
   ],
   imports: [
     BrowserModule,

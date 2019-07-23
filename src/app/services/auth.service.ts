@@ -13,7 +13,7 @@ export class AuthService {
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      'Authorization': 'my-auth-token'
+      'Authorization': 'my-auth-token' // Seulement quand on use le JWT
     })
   };
 

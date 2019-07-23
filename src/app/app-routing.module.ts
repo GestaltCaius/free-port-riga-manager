@@ -7,6 +7,7 @@ import { CurrentTripComponent } from './components/current-trip/current-trip.com
 import { SearchTripComponent } from './components/search-trip/search-trip.component';
 import { TripHistoryComponent } from './components/trip-history/trip-history.component';
 import { BookTripComponent } from './components/book-trip/book-trip.component';
+import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
       {path: 'search-trip', component: SearchTripComponent},
       {path: 'trip-history', component: TripHistoryComponent},
       {path: 'book-trip', component: BookTripComponent},
+      {path: 'details', component: TripDetailsComponent},
     ]
   }
 ];
