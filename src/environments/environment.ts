@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  tripsDataApi: '192.168.99.192:5000'
 };
 
 /*

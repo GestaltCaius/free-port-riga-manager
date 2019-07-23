@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class AuthService {
     return 'working';
   }
 
-  login(user: U): Observable<any> {
+  login(user: User): Observable<any> {
     let url: string = `${this.BASE_URL}/login`;
     return this.http.post(url, user, this.httpOptions);
   }
