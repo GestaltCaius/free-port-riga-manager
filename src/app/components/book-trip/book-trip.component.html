@@ -1,75 +1,237 @@
-<input id="inputsearchdepart" class="form-control" type="text" onkeyup="filtersearch()" placeholder="Search Depart"
-  aria-label="Search Depart">
-<input id="inputsearcharrival" class="form-control" type="text" onkeyup="filtersearch()" placeholder="Search Arrival"
-  aria-label="Search Arrival">
-<div class="row">
-  <table id="tabletrips" class="table">
-    <thead>
-      <tr>
-        <th scope="col">Trips</th>
-        <th scope="col">Depart</th>
-        <th scope="col">Arrival</th>
-        <th scope="col">Estimated Arrival</th>
-        <th scope="col">etc</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>France</td>
-        <td>Lettonie</td>
-        <td>12h56</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Lettonie</td>
-        <td>France</td>
-        <td>23h41</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Lettonie</td>
-        <td>Russie</td>
-        <td>07h65</td>
-      </tr>
-    </tbody>
-  </table>
+<!-- Modal -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="bookATripModal"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">
+          Have you booked a trip?
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Did you book any trip on StenaLine?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" routerLink="/home">No</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="showForm()">Yes</button>
+      </div>
+    </div>
+  </div>
 </div>
 
-<style>
-  .btn {
-    margin: 10px;
+
+<!-- <div class="wrapper fadeInDown"> -->
+  <div *ngIf="haveBookedATrip" class="row justify-content-centyer">
+    <div class="col-md-12">
+      <div class="well well-sm">
+        <form class="form-horizontal" method="post">
+          <fieldset>
+            <legend class="text-center header">CMR Form</legend>
+
+            <div class="form-group">
+              <span class="col-md-1 col-md-offset-2"><i class="fa fa-user bigicon"></i></span>
+              <div class="col-md-8">
+                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+              <div class="col-md-8">
+                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+              <div class="col-md-8">
+                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+              <div class="col-md-8">
+                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+              <div class="col-md-8">
+                <textarea class="form-control" id="message" name="message"
+                  placeholder="Enter your massage for us here. We will get back to you within 2 business days."
+                  rows="7"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+
+<!-- <style>
+  .header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
   }
 
-</style>
+  .bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+  }
 
-<!-- Square Buttons Effects - END -->
+  .wrapper {
+    display: flex auto;
+    min-height: 100%;
+  }
 
-<script>
-  function filtersearch() {
-    // Declare variables 
-    var input, filter, table, tr, td, i, txtValue, input2, filter2, td2, txtValue2;
-    input = document.getElementById("inputsearchdepart");
-    input2 = document.getElementById("inputsearcharrival");
-    filter = input.value.toUpperCase();
-    filter2 = input2.value.toUpperCase();
-    table = document.getElementById("tabletrips");
-    tr = table.getElementsByTagName("tr");
 
-    // Loop through all table rows, and hide those who don't match the search query
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      td2 = tr[i].getElementsByTagName("td")[1];
-      if (td || td2) {
-        txtValue = td.textContent || td.innerText;
-        txtValue2 = td2.textContent || td2.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1 && txtValue2.toUpperCase().indexOf(filter2) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }
+
+  .fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
     }
   }
 
-</script>
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  /* Simple CSS3 Fade-in Animation */
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    opacity: 0;
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+  }
+
+  .fadeIn.first {
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+  }
+
+  .fadeIn.second {
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+  }
+
+  .fadeIn.third {
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+  }
+
+  .fadeIn.fourth {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+
+  /* Simple CSS3 Fade-in Animation */
+  .underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #56baed;
+    content: "";
+    transition: width 0.2s;
+  }
+
+  .underlineHover:hover {
+    color: #0d0d0d;
+  }
+
+  .underlineHover:hover:after {
+    width: 100%;
+  }
+
+
+  .top-buffer {
+    margin-top: 20px;
+  }
+
+  .right-buffer {
+    margin-right: 10px;
+  }
+
+</style> -->

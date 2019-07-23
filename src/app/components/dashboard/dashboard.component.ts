@@ -12,4 +12,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+  bookATrip(): void {
+    window.open('https://www.stenalinetravel.com/ferry-to-scandinavia', '_blank');
+  }
 }

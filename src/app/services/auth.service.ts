@@ -22,7 +22,7 @@ export class AuthService {
     return 'working';
   }
 
-  login(user): Observable<any> {
+  login(user: U): Observable<any> {
     let url: string = `${this.BASE_URL}/login`;
     return this.http.post(url, user, this.httpOptions);
   }
