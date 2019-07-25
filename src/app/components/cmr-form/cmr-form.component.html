@@ -1,11 +1,11 @@
     <div class="row">
-      <div id="btn_book" class="btn btn-block p-4">
+      <div id="btn_trips" class="btn btn-block p-4">
         <div class="row">
           <span class="badge col-2">
             <i class="fa fa-compass fa-4x"></i>
           </span>
           <span class="col-8 justify-content-center my-auto button-text">
-            Book a trip
+            Create a Trip
           </span>
         </div>
       </div>
@@ -282,6 +282,12 @@
           </div>
 
           <div class="form-group">
+              <label for="dport_id" class="control-label">Departing port</label><span
+                style="color: red !important; display: inline; float: none;">*</span>
+              <input type="text" class="form-control" id="dport_id" name="dport" placeholder="Type">
+            </div>
+
+          <div class="form-group">
             <label for="country">Arriving at</label><span
               style="color: red !important; display: inline; float: none;">*</span>
 
@@ -536,6 +542,12 @@
           </div>
 
           <div class="form-group">
+              <label for="aport_id" class="control-label">Arriving port</label><span
+                style="color: red !important; display: inline; float: none;">*</span>
+              <input type="text" class="form-control" id="aport_id" name="aport" placeholder="Type">
+            </div>
+
+          <div class="form-group">
             <label for="cargo_id" class="control-label">Cargo</label><span
               style="color: red !important; display: inline; float: none;">*</span>
             <input type="text" class="form-control" id="cargo_id" name="cargo" placeholder="Type">
@@ -578,14 +590,12 @@
           </div>
 
           <div class="form-group">
-            <label for="container_id" class="control-label">Container Nr</label><span
-              style="color: red !important; display: inline; float: none;">*</span>
+            <label for="container_id" class="control-label">Container Nr</label>
             <input type="text" class="form-control" id="container_id" name="container" placeholder="Nr">
           </div>
 
           <div class="form-group">
-            <label for="containerT_id" class="control-label">Container Type</label><span
-              style="color: red !important; display: inline; float: none;">*</span>
+            <label for="containerT_id" class="control-label">Container Type</label>
             <input type="text" class="form-control" id="containerT_id" name="containerT" placeholder="Type">
           </div>
 
