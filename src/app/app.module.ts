@@ -15,6 +15,7 @@ import { CmrFormComponent } from './components/cmr-form/cmr-form.component';
 import { TabComponent } from './components/tab/tab.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 import { FerryScheduleComponent } from './components/ferry-schedule/ferry-schedule.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FerryScheduleComponent } from './components/ferry-schedule/ferry-schedu
     CmrFormComponent,
     TabComponent,
     TripDetailsComponent,
-    FerryScheduleComponent
+    FerryScheduleComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

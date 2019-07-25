@@ -11,12 +11,14 @@ import { TripDetailsComponent } from './components/trip-details/trip-details.com
 import { AuthGuard } from './guards/auth.guard';
 import { CmrFormComponent } from './components/cmr-form/cmr-form.component';
 import { FerryScheduleComponent } from './components/ferry-schedule/ferry-schedule.component';
+import { UserComponent } from './components/user/user.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full', canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
   { path: 'home', component: DashboardComponent, canActivate: [AuthGuard]},
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard]},
   { path: 'tab', component: TabComponent, canActivate: [AuthGuard], children:
     [
       {path: 'current-trip', component: CurrentTripComponent, canActivate: [AuthGuard]},
