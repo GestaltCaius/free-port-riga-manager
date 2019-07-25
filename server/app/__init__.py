@@ -15,11 +15,9 @@ jwt = JWTManager(app)
 migrate = Migrate(app, db)
 
 # Import remaning files
-from app import models, resources, debug
+from app import models, resources
 
 # Register API resources
-api.add_resource(debug.Exec, '/debug/exec')
-api.add_resource(debug.UserAdd, '/debug/useradd')
 api.add_resource(resources.TokenRefresh, '/token/refresh')
 api.add_resource(resources.Login, '/login')
 api.add_resource(resources.LogoutAccess, '/logout/access')

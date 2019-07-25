@@ -3,9 +3,9 @@ import os
 
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-DEBUG = True
+DEBUG = False
 SERVER_IP = '127.0.0.1'
-SERVER_PORT = 8080
+SERVER_PORT = 5000
 BCRYPT_ROUNDS = 12
 JWT_ACCESS_TOKEN_EXPIRES = datetime.timedelta(minutes=15)
 JWT_REFRESH_TOKEN_EXPIRES = datetime.timedelta(days=10)
