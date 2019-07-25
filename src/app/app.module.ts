@@ -14,6 +14,7 @@ import { BookTripComponent } from './components/book-trip/book-trip.component';
 import { CmrFormComponent } from './components/cmr-form/cmr-form.component';
 import { TabComponent } from './components/tab/tab.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
+import { FerryScheduleComponent } from './components/ferry-schedule/ferry-schedule.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TripDetailsComponent } from './components/trip-details/trip-details.com
     BookTripComponent,
     CmrFormComponent,
     TabComponent,
-    TripDetailsComponent
+    TripDetailsComponent,
+    FerryScheduleComponent
   ],
   imports: [
     BrowserModule,

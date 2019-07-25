@@ -10,6 +10,7 @@ import { BookTripComponent } from './components/book-trip/book-trip.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
 import { AuthGuard } from './guards/auth.guard';
 import { CmrFormComponent } from './components/cmr-form/cmr-form.component';
+import { FerryScheduleComponent } from './components/ferry-schedule/ferry-schedule.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
       {path: 'book-trip', component: BookTripComponent, canActivate: [AuthGuard]},
       {path: 'details', component: TripDetailsComponent, canActivate: [AuthGuard]},
       {path: 'crm-form', component: CmrFormComponent, canActivate: [AuthGuard]},
+      {path: 'ferry-schedule', component: FerryScheduleComponent, canActivate: [AuthGuard]},
     ]
     }
 ];
