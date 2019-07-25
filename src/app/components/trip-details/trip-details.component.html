@@ -1,29 +1,8 @@
-<!-- <div class="row">
-  <table class="table">
-    <thead>
-      <tr>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">01/04/2017</th>
-        <td> PH33309 </td>
-        <td> France </td>
-        <td> Russia </td>
-        <td></td>
-        <td>02/04/2017 09:01</td>
-        <td>02/04/2017 09:02</td>
-        <td><button type="button" class="btn btn-dark">More</button></td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
-
 <div class="row">
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        My trip (INSERT LOGO HERE)
+        <i class="fa fa-truck fa-2x"></i>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
@@ -97,7 +76,8 @@
 </div>
 
 <div class="row justify-content-center my-5">
-  <button type="button" class="btn btn-primary" (click)="editCMR()" [hidden]="showCMR">I want to edit this trip's CMR form</button>
+  <button type="button" class="btn btn-primary" (click)="editCMR()" [hidden]="showCMR">I want to edit this trip's CMR
+    form</button>
 </div>
 
 <div *ngIf="showCMR">

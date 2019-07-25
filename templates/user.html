@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-header wrapper" align="center">
+      <h1>User Profile</h1>
+    </div>
+
+
+    <table class="table table-bordered table-light">
+      <tbody>
+        <tr>
+          <th scope="row">Username</th>
+          <td>John</td>
+        </tr>
+        <tr>
+          <th scope="row">Surname</th>
+          <td>Jackson</td>
+        </tr>
+        <tr>
+          <th scope="row">Phone Number</th>
+          <td>+33601010101</td>
+        </tr>
+        <tr>
+          <th scope="row">Email</th>
+          <td>email@example.com</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-header wrapper">
+      <h3>Modify Password</h1>
+    </div>
+
+    <form>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Old Password</label>
+        <div class="col-sm-4">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">New Password</label>
+        <div class="col-sm-4">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+        <div class="col-sm-4">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+
+      <div class="form-group row m-3">
+        <input type="submit" value="Modify">
+      </div>
+    </form>
+  </div>
+
+  <style>
+    h1 {
+      text-align: center;
+      margin: 40px 40px 40px 40px;
+
+    }
+
+    h3 {
+      margin: 40px 40px 40px 0px;
+
+    }
+
+    input[type=button],
+    input[type=submit],
+    input[type=reset] {
+      background-color: #56baed;
+      border: none;
+      color: white;
+      padding: 15px 80px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 13px;
+      -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+      box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      /* margin: 5px 20px 40px 345px; */
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    input[type=button]:hover,
+    input[type=submit]:hover,
+    input[type=reset]:hover {
+      background-color: #39ace7;
+    }
+
+    input[type=button]:active,
+    input[type=submit]:active,
+    input[type=reset]:active {
+      -moz-transform: scale(0.95);
+      -webkit-transform: scale(0.95);
+      -o-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+      transform: scale(0.95);
+    }
+
+  </style>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

@@ -1,38 +1,31 @@
-# Questions
+# Free Port Riga
 
-* Quelles informations dans la liste des trips ? Source, destination, heure de depart, ID du voyage ? C'est tout ?
-* Comment on fait la recherche ? On charge tout et apres il cherche ou bien il tape le jour de depart, le lieu et on renvoie les infos ?
+## Installation
 
-1. Search for his trip
-2. had a button to be notified (bookmark/notify by email)
+* Install [node](https://nodejs.org/en/) (which includes `npm`)
+* Install [Angular CLI](https://cli.angular.io/).
 
+## Usage
 
-scheduled and real time + details link  
+* `npm install` in project's root directory
+* `npm start` to run the dev server
 
-# FreeportRiga
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
+* `ng build --prod` to build the production project
+    * Website is built in directory `dist/freeport-riga/`
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Project's architecture
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Angular components are in the `src/app/components/` directory.
 
-## Running end-to-end tests
+Services are in the `src/app/services` directory.
+Services are used to communicate with the backend part and retrieve data from it. (Trips, user login, etc.)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The `AuthGuard.ts` in the `src/app/guards/` directory is used to "protect" the project from unauthenticated users. They have to pass the guard (i.e. be logged in) to see the application.

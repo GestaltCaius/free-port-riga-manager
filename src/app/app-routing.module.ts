@@ -8,25 +8,24 @@ import { SearchTripComponent } from './components/search-trip/search-trip.compon
 import { TripHistoryComponent } from './components/trip-history/trip-history.component';
 import { BookTripComponent } from './components/book-trip/book-trip.component';
 import { TripDetailsComponent } from './components/trip-details/trip-details.component';
+import { AuthGuard } from './guards/auth.guard';
+import { CmrFormComponent } from './components/cmr-form/cmr-form.component';
 
 
 const routes: Routes = [
-  { path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {path: 'login', component: LoginComponent},
-  {path: 'home', component: DashboardComponent},
-  {
-    path: 'tab', component: TabComponent, children:
+  { path: '', redirectTo: 'login', pathMatch: 'full', canActivate: [AuthGuard]},
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
+  { path: 'home', component: DashboardComponent, canActivate: [AuthGuard]},
+  { path: 'tab', component: TabComponent, canActivate: [AuthGuard], children:
     [
-      {path: 'current-trip', component: CurrentTripComponent},
-      {path: 'search-trip', component: SearchTripComponent},
-      {path: 'trip-history', component: TripHistoryComponent},
-      {path: 'book-trip', component: BookTripComponent},
-      {path: 'details', component: TripDetailsComponent},
+      {path: 'current-trip', component: CurrentTripComponent, canActivate: [AuthGuard]},
+      {path: 'search-trip', component: SearchTripComponent, canActivate: [AuthGuard]},
+      {path: 'trip-history', component: TripHistoryComponent, canActivate: [AuthGuard]},
+      {path: 'book-trip', component: BookTripComponent, canActivate: [AuthGuard]},
+      {path: 'details', component: TripDetailsComponent, canActivate: [AuthGuard]},
+      {path: 'crm-form', component: CmrFormComponent, canActivate: [AuthGuard]},
     ]
-  }
+    }
 ];
 
 @NgModule({
