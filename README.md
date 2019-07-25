@@ -1,5 +1,31 @@
 # Free Port Riga
 
+One app for all cargo-truck drivers.
+
+>Book your ferry trips, track your trips in real time to avoid any delay or cancelled ferry trip, inform your forwarder about your truck route.
+
+<div style="margin: auto; width: 90%;">
+<img src="https://i.imgur.com/PV9ZF2K.png" width=30%/>
+<img src="https://i.imgur.com/BumLyKH.png" width=30%/>
+<img src="https://i.imgur.com/vQrrdYY.png" width=30%/>
+</div>
+
+Web app using Angular 8+.
+
+You can:
+
+* Book a ferry trip on a ferry line company
+* Fill your CMR form
+* Track your trips times (scheduled, estimated and real time)
+* Create your truck route
+* Check ferry lines schedules
+* Keep your ferry trips and CMR forms history
+
+<div style="margin: auto; width:90%;">
+<img src="https://i.imgur.com/JePv57N.png" width=45%/>
+<img src="https://i.imgur.com/R6VE8k9.png" width=45%/>
+</div>
+
 ## Installation
 
 * Install [node](https://nodejs.org/en/) (which includes `npm`)
